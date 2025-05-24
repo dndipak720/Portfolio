@@ -1,0 +1,31 @@
+{
+  "projects": [
+    {
+      "id": 1,
+      "title": "E-Commerce Platform",
+      "description": "A full-stack e-commerce platform built with React, Node.js, and MongoDB. Features include user authentication, product management, shopping cart, and payment integration.",
+      "image": "/project1.jpg",
+      "tags": ["React", "Node.js", "MongoDB", "Express", "Redux", "Stripe"],
+      "github": "https://github.com/yourusername/project1",
+      "demo": "https://project1-demo.com"
+    },
+    {
+      "id": 2,
+      "title": "Task Management App",
+      "description": "A real-time task management application with collaborative features. Users can create projects, assign tasks, set deadlines, and track progress in real-time.",
+      "image": "/project2.jpg",
+      "tags": ["React", "Firebase", "Tailwind CSS", "Context API", "Real-time"],
+      "github": "https://github.com/yourusername/project2",
+      "demo": "https://project2-demo.com"
+    },
+    {
+      "id": 3,
+      "title": "Social Media Dashboard",
+      "description": "Analytics dashboard for social media metrics and engagement. Visualize data with interactive charts and generate detailed reports.",
+      "image": "/project3.jpg",
+      "tags": ["React", "D3.js", "Node.js", "PostgreSQL", "REST API"],
+      "github": "https://github.com/yourusername/project3",
+      "demo": "https://project3-demo.com"
+    }
+  ]
+}

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Generate Placeholder Images</title>
+    <style>
+        canvas {
+            margin: 10px;
+            border: 1px solid #ccc;
+        }
+    </style>
+</head>
+<body>
+    <script>
+        function createPlaceholder(width, height, text, color) {
+            const canvas = document.createElement('canvas');
+            canvas.width = width;
+            canvas.height = height;
+            const ctx = canvas.getContext('2d');
+
+            // Background
+            ctx.fillStyle = color;
+            ctx.fillRect(0, 0, width, height);
+
+            // Text
+            ctx.fillStyle = '#ffffff';
+            ctx.font = `${Math.min(width, height) / 10}px Arial`;
+            ctx.textAlign = 'center';
+            ctx.textBaseline = 'middle';
+            ctx.fillText(text, width/2, height/2);
+
+            return canvas;
+        }
+
+        // Create placeholders
+        const placeholders = [
+            { name: 'hero.jpg', width: 600, height: 600, text: 'Hero Image', color: '#3b82f6' },
+            { name: 'about.jpg', width: 400, height: 600, text: 'About Image', color: '#4f46e5' },
+            { name: 'project1.jpg', width: 1280, height: 720, text: 'Project 1', color: '#10b981' },
+            { name: 'project2.jpg', width: 1280, height: 720, text: 'Project 2', color: '#f59e0b' },
+            { name: 'project3.jpg', width: 1280, height: 720, text: 'Project 3', color: '#ef4444' }
+        ];
+
+        placeholders.forEach(p => {
+            const canvas = createPlaceholder(p.width, p.height, p.text, p.color);
+            document.body.appendChild(canvas);
+            
+            // Download link
+            const link = document.createElement('a');
+            link.download = p.name;
+            link.href = canvas.toDataURL('image/jpeg', 0.8);
+            link.textContent = `Download ${p.name}`;
+            document.body.appendChild(link);
+            document.body.appendChild(document.createElement('br'));
+        });
+    </script>
+</body>
+</html>
